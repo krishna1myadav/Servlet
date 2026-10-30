@@ -2,6 +2,7 @@ package com.project.service;
 
 import com.project.model.User;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -24,6 +25,10 @@ public class UserService {
     }
 
     public List<User> getAllUsers(){
-        return (List<User>) userDB.values();
+        List<User> userRes = new ArrayList<>();
+        for(User user : userDB.values()){
+            userRes.add(user);
+        }
+        return userRes;
     }
 }
