@@ -3,6 +3,7 @@ package com.project.service;
 import com.project.model.User;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UserService {
@@ -16,5 +17,13 @@ public class UserService {
     public User createUser(User userReq){
         userDB.put(userReq.getId(), userReq);
         return userReq;
+    }
+
+    public User getUserById(Integer userId){
+        return userDB.get(userId);
+    }
+
+    public List<User> getAllUsers(){
+        return (List<User>) userDB.values();
     }
 }
